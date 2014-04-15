@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>SendGrid Presentation - Using Reveal.js</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -114,6 +114,7 @@
 					</section>
 
 					<section>
+						<h2>POST Request</h2>
 						<p>https://api.sendgrid.com/api/mail.send.json</p>
 						<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 api_user=your_sendgrid_username
@@ -126,7 +127,27 @@ api_user=your_sendgrid_username
 &amp;text=testingtextbody
 &amp;from=info@domain.com
 						</code></pre>
-						<p>POST request</p>
+						<h2>cURL Request</h2>
+						<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+$ curl -d 'to[]=destination@example.com&toname[]=Destination&to[]=destination2@example.com&toname[]=Destination2&subject=Example Subject&text=testingtextbody&from=info@domain.com&api_user=your_sendgrid_username&api_key=your_sendgrid_password' https://api.sendgrid.com/api/mail.send.json
+						</code></pre>
+						<aside class="notes" >
+							This code fragment does exactly the same as the SMTP request but allow you to push to an API endpoint instead.
+						</aside>
+					</section>
+
+					<section>
+						<h2>x-smtpapi</h2>
+						<p>For the little extra</p>
+						<aside class="notes" >
+							The x-smtp header allows for quite a bit of extra functionality, such as:
+							<ul>
+								<li>Categorisation - Campaign tracking</li>
+								<li>Addition TO fields</li>
+								<li>Substitutions</li>
+								<li>Etc</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 
