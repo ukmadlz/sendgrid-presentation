@@ -86,7 +86,7 @@
 					<section>
 						<h2>Transactional</h2>
 						<p>The easy way</p>
-<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+						<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 {
 	"smtp":"smtp.sendgrid.net",
 	"user":"&lt;YourUsername&gt;",
@@ -95,7 +95,7 @@
 	"port":"465" // SSL
 
 }
-					</code></pre>
+						</code></pre>
 
 						<aside class="notes">
 							Transactional e-mail can be implemented in a couple of ways.
@@ -106,6 +106,27 @@
 					<section>
 						<h2>Transactional</h2>
 						<p>The not so easy way</p>
+						<p><a href="https://sendgrid.com/docs/API_Reference/Web_API/index.html" >Web API</a></p>
+
+						<aside class="notes" >
+							Sometimes you may not have access to the sendmail or a means of piping through to SMTP, at which point you can use the Web API.
+						</aside>
+					</section>
+
+					<section>
+						<p>https://api.sendgrid.com/api/mail.send.json</p>
+						<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+api_user=your_sendgrid_username
+&amp;api_key=your_sendgrid_password
+&amp;to[]=destination@example.com
+&amp;toname[]=Destination
+&amp;to[]=destination2@example.com
+&amp;toname[]=Destination2
+&amp;subject=Example_Subject
+&amp;text=testingtextbody
+&amp;from=info@domain.com
+						</code></pre>
+						<p>POST request</p>
 					</section>
 				</section>
 
